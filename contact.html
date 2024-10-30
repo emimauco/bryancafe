@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact | Bryan’s Café</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<<div class="w3-top w3-black">
+  <div class="w3-row w3-padding w3-black w3-center">
+    <a href="index.html" class="w3-button w3-black">
+      <img src="bryanlogo.png" alt="Bryan's Café Logo" style="height: 43px; width: 121px; vertical-align: middle;">
+    </a>
+    <a href="index.html" class="w3-button w3-black">HOME</a>
+    <a href="menu.html" class="w3-button w3-black">MENU</a>
+    <a href="contact.html" class="w3-button w3-black">CONTACT</a>
+   
+  </div>
+</div>
+<<!-- Inquiry Form -->
+    <h3 class="w3-center" style="margin-top:48px;">Send Us a Message</h3>
+    <div class="w3-content" style="max-width:700px">
+        <form id="contactForm" class="w3-container w3-card w3-padding">
+            <p><label>First Name</label>
+            <input class="w3-input w3-border" type="text" name="firstName" required></p>
+
+            <p><label>Last Name</label>
+            <input class="w3-input w3-border" type="text" name="lastName" required></p>
+
+            <p><label>Email Address</label>
+            <input class="w3-input w3-border" type="email" name="email" required></p>
+
+            <p><label>Message Subject</label>
+            <input class="w3-input w3-border" type="text" name="subject" required></p>
+
+            <p><label>Message Body</label>
+            <textarea class="w3-input w3-border" name="message" rows="5" required></textarea></p>
+
+            <p><button type="button" onclick="submitForm()" class="w3-button w3-black">Submit</button></p>
+        </form>
+        <p id="confirmationMessage" class="w3-text-green w3-center" style="display:none; margin-top:16px;">Thank you! Your message has been sent.</p>
+    </div>
+</div>
+<!-- Contact Section -->
+<div class="w3-container" id="contact" style="padding:64px 16px;">
+    <h3 class="w3-center">Our Locations</h3>
+    <div id="branch-list" class="w3-content" style="max-width:700px">
+        <!-- Branch information will be loaded here -->
+    </div>
+</div>
+
+<script>
+// Function to fetch and parse XML data
+function loadXMLDoc(filename) {
+    return fetch(filename)
+        .then(response => response.text())
+        .then(str => new window.DOMParser().parseFromString(str, "text/xml"));
+}
+
+// Load and display branch information from branches.xml
+loadXMLDoc('branches.xml').then(xml => {
+    const branches = xml.getElementsByTagName('branch');
+    let branchList = document.getElementById('branch-list');
+    
+    for (let i = 0; i < branches.length; i++) {
+        let location = branches[i].getElementsByTagName('location')[0].textContent;
+        let address = branches[i].getElementsByTagName('address')[0].textContent;
+        let phone = branches[i].getElementsByTagName('phone')[0].textContent;
+        let weekdayHours = branches[i].getElementsByTagName('weekday')[0].textContent;
+        let weekendHours = branches[i].getElementsByTagName('weekend')[0].textContent;
+        let googleMapLink = branches[i].getElementsByTagName('googleMapLink')[0].textContent;
+
+        // Create a container for each branch's information
+        let branchItem = document.createElement('div');
+        branchItem.className = 'w3-card w3-padding w3-margin-bottom';
+        branchItem.innerHTML = `
+            <h5>${location}</h5>
+            <p><strong>Address:</strong> ${address}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Hours:</strong> ${weekdayHours} (Weekdays), ${weekendHours} (Weekends)</p>
+            <p><a href="${googleMapLink}" target="_blank" class="w3-button w3-black w3-small">View on Google Maps</a></p>
+        `;
+        branchList.appendChild(branchItem);
+    }
+});
+</script>
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>&copy; 2024 Bryan’s Café | <a href="privacy.html">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+<!ELEMENT beverages (beverage+)>
+<!ELEMENT beverage (name, price, description, size?, image)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT size (#PCDATA)>
+<!ELEMENT image (#PCDATA)>

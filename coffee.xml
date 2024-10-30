@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beverages SYSTEM "coffee.dtd">
+
+<beverages>
+  <beverage>
+    <name>Small Coffee</name>
+    <price>$3.50</price>
+    <description>For coffee, please inform the staff of the coffee type</description>
+    <size>Small</size>
+    <image>small_coffee.png</image>
+  </beverage>
+
+  <beverage>
+    <name>Regular Coffee</name>
+    <price>$4.00</price>
+    <description>For coffee, please inform the staff of the coffee type</description>
+    <size>Regular</size>
+    <image>regular_coffee.png</image>
+  </beverage>
+
+  <beverage>
+    <name>Large Coffee</name>
+    <price>$4.50</price>
+    <description>For coffee, please inform the staff of the coffee type</description>
+    <size>Large</size>
+    <image>large_coffee.png</image>
+  </beverage>
+</beverages>

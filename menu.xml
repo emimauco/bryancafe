@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu SYSTEM "menu.dtd">
+
+<meals>
+  <meal>
+    <name>Beetroot and Feta Salad</name>
+    <price>$15.00</price>
+    <description>Suitable for vegetarians made with fresh beetroot</description>
+    <image>salad.jpg</image>
+  </meal>
+  
+  <meal>
+    <name>Sourdough Rye Sandwich</name>
+    <price>$18.00</price>
+    <description>Cheese and salad sandwich made with organic sourdough rye bread</description>
+    <image>sandwich.jpg</image>
+  </meal>
+
+  <meal>
+    <name>Spinach Pie and Salad</name>
+    <price>$20.00</price>
+    <description>Tasty pie with salad</description>
+    <image>pie.jpg</image>
+  </meal>
+
+  <meal>
+    <name>Feta Pancakes with Salad</name>
+    <price>$19.50</price>
+    <description>Tasty pancakes filled with feta and salad</description>
+    <image>pancakes.jpg</image>
+  </meal>
+</meals>

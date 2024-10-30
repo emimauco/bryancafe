@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beverages SYSTEM "beverages.dtd">
+<beverages>
+  <beverage>
+    <name>Soda</name>
+    <price>$3.00</price>
+    <description>Refreshing soda</description>
+    <image>soda.png</image>
+  </beverage>
+
+  <beverage>
+    <name>Fresh Juice</name>
+    <price>$6.00</price>
+    <description>Freshly squeezed juice</description>
+    <image>fresh_juice.png</image>
+  </beverage>
+
+  <beverage>
+    <name>Bottled Water</name>
+    <price>$2.00</price>
+    <description>Clear bottled water</description>
+    <image>bottled_water.png</image>
+  </beverage>
+</beverages>
